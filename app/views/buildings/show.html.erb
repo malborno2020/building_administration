@@ -15,5 +15,16 @@
   <%= @building.city %>
 </p>
 
+<p>
+  <strong>Apartments:</strong>
+  <ul>
+  <% @building.apartments.each do |i|%>
+  <li>
+    <%= link_to i.number, apartment_path(i)%>
+  </li>
+  <%end%>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_building_path(@building) %> |
 <%= link_to 'Back', buildings_path %>

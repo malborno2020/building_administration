@@ -8,6 +8,7 @@ class BuildingsController < ApplicationController
 
   # GET /buildings/1 or /buildings/1.json
   def show
+    @apartments=Apartment.all
   end
 
   # GET /buildings/new
@@ -54,6 +55,9 @@ class BuildingsController < ApplicationController
       format.html { redirect_to buildings_url, notice: "Building was successfully destroyed." }
       format.json { head :no_content }
     end
+  rescue
+    flash[:building_destroy_error] = "Can't destroy #{@building.name} because it has aparments"
+    redirect_to buildings_path #notice: "Can't destroy this building"
   end
 
   private
