@@ -1,0 +1,15 @@
+$primary    :    #F0B22B;
+$secondary  :    #02B9ED;
+$success    :    #00F03C;
+$info       :    #F09726;
+$warning    :    #F70215;
+$danger     :    #F06027;
+$light      :    #D3D4D0;
+$dark       :    #012357;
+
+
+@import '~bootstrap/scss/bootstrap';
+
+.btn{
+    border-radius: 1rem;
+}
